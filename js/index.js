@@ -2,7 +2,9 @@ $.getJSON("assets/english.json", function(data){
   var treasures = data.treasures;
   $(document).ready(function(){
     treasures.sort(function(a, b) {
-        return a.name - b.name;
+    	a = a.name;
+    	b = b.name;
+        return (a<b?-1:(a>b?1:0));
     });
     for (var i in treasures)
     {
