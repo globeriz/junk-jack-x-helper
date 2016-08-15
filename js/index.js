@@ -17,7 +17,9 @@ $.getJSON("assets/english.json", function(data){
       var id = parseInt($(this).val(), 10);
       var x = (id % 64).toString(10);
       var y = (~~(id / 64)).toString(10);
-      $('#img-item').css('background', 'url(assets/treasures.png) '+x+' '+y);
+      var s = 'url("assets/treasures.png") '+x+' '+y;
+      console.log(s);
+      $('#img-item').css('background', s);
     });
   });
 });
