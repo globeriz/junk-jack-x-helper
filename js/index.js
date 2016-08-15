@@ -3,6 +3,7 @@ $.getJSON("assets/english.json", function(data){
   $(document).ready(function(){
     for (var treasure in treasures)
     {
+      console.log(treasure);
       opt = $('<option/>', {value: treasure.id, text: treasure.name});
       $('#select-item').append(opt);
     }
