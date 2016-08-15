@@ -11,6 +11,10 @@ $.getJSON("assets/english.json", function(data){
     }
     $('#select-item').change(function(){
       $('#text-item').text( $(this).val() );
+      var id = parseInt($(this).val(), 10);
+      var x = (id % 64).toString(10);
+      var y = (~~(id / 64)).toString(10);
+      $('#img-item').css('background', 'url(assets/treasures.png) '+x+' '+y)
     });
   });
 });
