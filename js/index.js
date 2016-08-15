@@ -10,7 +10,7 @@ $.getJSON("assets/english.json", function(data){
       $('#select-item').append(opt);
     }
     $('#select-item').change(function(){
-      $('#text-item').text( $(this).value() );
+      $('#text-item').text( $(this).val() );
     });
   });
 });
