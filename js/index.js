@@ -14,8 +14,8 @@ $.getJSON("assets/english.json", function(data){
     $('#select-item').change(function(){
       $('#text-item').text( $(this).val() );
       var id = parseInt($(this).val(), 10);
-      var x = (id % 64).toString(10);
-      var y = (~~(id / 64)).toString(10);
+      var x = (-16 * (~~(id / 64))).toString(10)+'px';
+      var y = (-16 * (id % 64)).toString(10)+'px';
       var s = 'url(assets/treasures.png) '+x+' '+y;
       $('#img-item').css('background', s);
     });
