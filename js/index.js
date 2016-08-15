@@ -9,6 +9,9 @@ $.getJSON("assets/english.json", function(data){
       opt = $('<option/>', {value: treasures[i].id, text: treasures[i].name});
       $('#select-item').append(opt);
     }
+    $('#img-item').css('height', '16px');
+    $('#img-item').css('width', '16px');
+    $('#img-item').css('display', 'inline');
     $('#select-item').change(function(){
       $('#text-item').text( $(this).val() );
       var id = parseInt($(this).val(), 10);
