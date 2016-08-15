@@ -1,9 +1,6 @@
 $.getJSON("assets/english.json", function(data){
   var treasures = data.treasures;
   $(document).ready(function(){
-    Object.keys(unordered).sort().forEach(function(key) {
-      ordered[key] = unordered[key];
-    });
     treasures.sort(function(a, b) {
         return a.name - b.name;
     });
