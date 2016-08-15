@@ -11,14 +11,12 @@ $.getJSON("assets/english.json", function(data){
     }
     $('#img-item').css('height', '16px');
     $('#img-item').css('width', '16px');
-    $('#img-item').css('display', 'inline');
     $('#select-item').change(function(){
       $('#text-item').text( $(this).val() );
       var id = parseInt($(this).val(), 10);
       var x = (id % 64).toString(10);
       var y = (~~(id / 64)).toString(10);
       var s = 'url(assets/treasures.png) '+x+' '+y;
-      console.log(s);
       $('#img-item').css('background', s);
     });
   });
