@@ -6,7 +6,6 @@ $.getJSON("assets/english.json", function(data){
     });
     for (var i in treasures)
     {
-      names.push(treasures[i].name);
       opt = $('<option/>', {value: treasures[i].id, text: treasures[i].name});
       $('#select-item').append(opt);
     }
