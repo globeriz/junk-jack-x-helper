@@ -1,3 +1,12 @@
+function updateSelectItem()
+{
+  $('#text-item').text( $('#select-item').val() );
+  var id = parseInt($('#select-item').val(), 10);
+  var x = (-16*2 * (~~(id / 64))).toString(10)+'px';
+  var y = (-16*2 * (id % 64)).toString(10)+'px';
+  var s = 'url(assets/treasures_2x.png) '+x+' '+y;
+  $('#img-item').css('background', s);
+}
 jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
   return this.each(function() {
     var select = this;
@@ -23,6 +32,7 @@ jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
           $(select).children().length === 1) {
         $(select).children().get(0).selected = true;
       }
+      updateSelectItem();
     });
   });
 };
@@ -45,12 +55,8 @@ $.getJSON("assets/english.json", function(data){
     $('#img-item').css('height', (16*2).toString(10) +'px');
     $('#img-item').css('width', (16*2).toString(10) +'px');
     $('#select-item').change(function(){
-      $('#text-item').text( $(this).val() );
-      var id = parseInt($(this).val(), 10);
-      var x = (-16*2 * (~~(id / 64))).toString(10)+'px';
-      var y = (-16*2 * (id % 64)).toString(10)+'px';
-      var s = 'url(assets/treasures_2x.png) '+x+' '+y;
-      $('#img-item').css('background', s);
+      updateSelectItem();
     });
   });
 });
+updateSelectItem();
