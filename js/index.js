@@ -51,12 +51,13 @@ $.getJSON("assets/english.json", function(data){
     }
     $(function() {
       $('#select-item').filterByText($('#text-filter'), true);
-    });  
+    });
     $('#img-item').css('height', (16*2).toString(10) +'px');
     $('#img-item').css('width', (16*2).toString(10) +'px');
+    updateSelectItem();
+    //
     $('#select-item').change(function(){
       updateSelectItem();
     });
   });
 });
-updateSelectItem();
