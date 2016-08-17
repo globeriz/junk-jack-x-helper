@@ -5,6 +5,8 @@ function updateSelectItem()
   var x = (-16*2 * (~~(id / 64))).toString(10)+'px';
   var y = (-16*2 * (id % 64)).toString(10)+'px';
   var s = 'url(assets/treasures_2x.png) '+x+' '+y;
+  if (id === null)
+    s = '';
   $('#img-item').css('background', s);
 }
 jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
